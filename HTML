@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of Dates</title>
+    
+</head>
+<body>
+
+    <div class="container">
+        <h1>Types of Dates</h1>
+
+        <div id="wadi-dates" class="date-type">
+            <div class="carousel">
+                <img src="wadi_upscale-removebg-preview.png" alt="Wadi Date 1" class="active">
+                <img src="wadie-removebg-preview.png" alt="Wadi Date 2">
+                
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+            </div>
+            <h2>Wadi Dates</h2>
+            <div class="price"></div>
+            <p>Wadi El-Gedid dates are among the finest traditional Egyptian dates, with a cultivation history in Egypt that spans hundreds of thousands of years. These dates are known for their exceptional quality and taste, as well as their competitive price. We cultivate them in the Wadi El-Gedid region in southern Egypt, where they thrive in the high temperatures.</p>
+        </div>
+
+        <div id="type2" class="date-type">
+            <div class="carousel">
+              
+                <img src="MAJDOOOLLL.png" alt="Type 2 Image 2">
+                <img src="MADJOOL.png" alt="Type 2 Image 3">
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+            </div>
+            <h2>Medjool Dates</h2>
+            <div class="price"></div>
+            <p>This type of date is considered one of the best in the world. It has been recently cultivated in Egypt and has proven to be highly efficient. Medjool dates are among our finest products, rich in fiber and antioxidants that help combat diseases. They may enhance brain health and normal function, serve as an excellent natural sweetener, promote bone health, and assist in blood sugar control.
+
+            Medjool dates have also been able to strongly compete in the global market against traditional growers of this type of date, thanks to their similar qualities and lower price.
+
+            As for the sizes:
+
+                1.	Super Jumbo
+                2.	Jumbo
+                3.	Large</p>
+        </div>
+
+      
+        <table>
+            <caption>Summary of Date Types</caption>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Price (F.O.B)</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Wadi Dates</td>
+                    <td>$2,000 / Ton</td>
+                    <td><a href="#wadi-dates" class="btn">View</a></td>
+                </tr>
+                <tr>
+                    <td> Medjool Super Jumbo</td>
+                    <td>$7,000 / Ton</td>
+                    
+                    <td><a href="#type2" class="btn">View</a></td>
+                </tr>
+                <tr>
+                    <td>Medjool Jumbo</td>
+                    <td>$6,000 / Ton</td>
+                  
+                    <td><a href="#type2" class="btn">View</a></td>
+                </tr>
+                <tr>
+                    <td>Medjool Large</td>
+                    <td>$5,000 / Ton</td>
+                    
+                    <td><a href="#type2" class="btn">View</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.carousel').forEach(function (carousel) {
+                const slides = carousel.querySelectorAll('img');
+                const prevButton = carousel.querySelector('.prev');
+                const nextButton = carousel.querySelector('.next');
+                let currentIndex = 0;
+
+                function showSlide(index) {
+                    slides.forEach((slide, i) => {
+                        slide.classList.toggle('active', i === index);
+                    });
+                }
+
+                prevButton.addEventListener('click', function () {
+                    currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+                    showSlide(currentIndex);
+                });
+
+                nextButton.addEventListener('click', function () {
+                    currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+                    showSlide(currentIndex);
+                });
+
+                showSlide(currentIndex); // Show the first slide initially
+            });
+        });
+    </script>
+</body>
+</html>
